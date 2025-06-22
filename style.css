@@ -1,0 +1,599 @@
+.postcards {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  filter: sepia(0.4) contrast(1.1) brightness(0.95);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  position: relative;
+  z-index: 1;
+}
+
+/* Optional: Grain overlay using a pseudo-element */
+.postcards::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('images/grain.png'); /* Add a subtle transparent grain texture */
+  background-size: cover;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.postcards:hover {
+  filter: sepia(0.6) contrast(1.2) brightness(0.9);
+  transform: scale(1.01);
+  transition: all 0.3s ease-in-out;
+}
+
+
+.book {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: #f3ece6;
+}
+
+.track-page {
+  flex: 1 1 280px;
+  max-width: 400px;
+  background: #fffaf5;
+  padding: 1.5rem;
+  box-shadow:
+    inset 10px 0 15px rgba(0, 0, 0, 0.05),
+    inset -10px 0 15px rgba(0, 0, 0, 0.05);
+  margin: 0 auto;
+}
+
+
+.cd-art {
+  max-width: 80%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+}
+
+
+.hero h1 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.subtext {
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.1rem;
+}
+
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1.5rem;
+}
+
+.about-container img {
+  max-width: 100%;
+  height: auto;
+  flex: 1 1 300px;
+}
+
+.about-container p {
+  flex: 1 1 300px;
+  font-size: 1.1rem;
+}
+
+.cassette-player {
+  width: 90%;
+  max-width: 600px;
+  margin: 3rem auto;
+}
+
+.subscribe form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.subscribe input[type="email"] {
+  padding: 0.8rem;
+  font-size: 1rem;
+  width: 90%;
+  max-width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.subscribe button {
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  background-color: #e6ddd3;
+  color: #3c2f2f;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.subscribe button:hover {
+  background-color: #d8cfc7;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+footer a {
+  color: #a47350;
+  text-decoration: none;
+  margin: 0 0.3rem;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #7d5741;
+  text-decoration: underline;
+}
+
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-btn {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.8rem 1.6rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  background: #e6ddd3;
+  color: #3c2f2f;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.hero-btn:hover {
+  background: #d8cfc7;
+  transform: scale(1.05);
+}
+
+.listen-btn {
+  font-size: 1rem;
+  color: #6b4f3b;
+  text-decoration: underline dotted;
+  transition: color 0.3s;
+  display: inline-block;
+  margin-top: 2rem;
+}
+
+.listen-btn:hover {
+  color: #a47350;
+}
+
+.scroll-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.1rem;
+  font-family: 'Cormorant Garamond', serif;
+  color: #8b6a55;
+  background: none;
+  border: none;
+  cursor: pointer;
+  animation: bounce 2s infinite;
+  z-index: 1000;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, 10px); }
+}
+
+
+
+.book {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  background: #f3ece6;
+}
+
+.track-page {
+  width: 300px; /* Set a fixed or max width to avoid full-width */
+  background: #fffaf5;
+  padding: 2rem;
+  box-shadow:
+    inset 10px 0 15px rgba(0, 0, 0, 0.05),
+    inset -10px 0 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+/* Optional edge styles */
+.left-page {
+  border-right: 1px solid #e0d6cc;
+}
+
+.right-page {
+  border-left: 1px solid #e0d6cc;
+}
+
+.track-page li {
+  list-style: none;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.track-page li::before {
+  content: "♪";
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.track-page li:hover {
+  color: #a47350;
+  transform: translateX(5px);
+}
+
+.track-page li:hover::before {
+  opacity: 1;
+}
+
+
+
+
+/*caste player*/
+.cassette-player {
+  width: 90%;
+  max-width: 600px;
+  margin: 3rem auto;
+  background: #2e2e2e;
+  border: 8px solid #111;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+  font-family: 'Courier New', Courier, monospace;
+  position: relative;
+  overflow: hidden;
+}
+
+.cassette-top,
+.cassette-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem 1rem;
+}
+
+.screws {
+  width: 10px;
+  height: 10px;
+  background: #999;
+  border-radius: 50%;
+  box-shadow: inset 1px 1px 2px #333;
+}
+
+.cassette-window {
+  position: relative;
+  padding-top: 56.25%; /* 16:9 ratio */
+  background: #000;
+  margin: 1rem 0;
+  border: 4px solid #555;
+  box-shadow: inset 0 0 10px #000;
+}
+
+.cassette-window iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.spool {
+  width: 30px;
+  height: 30px;
+  background: radial-gradient(circle, #ccc 30%, #333 70%);
+  border-radius: 50%;
+  box-shadow: inset -2px -2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.label {
+  background: #f0f0f0;
+  color: #222;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+
+
+@keyframes rotateImage {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotateImage {
+  animation: rotateImage 6s linear infinite;
+    display: inline-block;
+    width: 200px; /* Adjust size as needed */
+    height: 200px; /* Adjust size as needed */
+    align-items: center;
+}
+
+.postcard {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  width: 120px;
+  z-index: 5;
+  display: none; /* hidden by default */
+}
+
+.about-page .postcard {
+  display: block; /* show only on about page */
+}
+.postcard img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.postcards:hover {
+    border-color: #4a4a4a;
+}
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'EB Garamond', serif;
+    background-color: #f4f4f4;
+    color: #2c2c2c;
+    line-height: 1.6;
+    background-image: url('forest-bg.jpg'); /* use a subtle forest background */
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+header {
+    text-align: center;
+    padding: 4rem 2rem 2rem;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+header h1 {
+    font-style: italic;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+header h2 {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: #555;
+}
+
+.hero {
+    position: relative;
+    text-align: center;
+    padding: 3rem 0;
+    background-image: 
+                
+                linear-gradient(rgba(95, 90, 90, 0.5), rgba(62, 62, 62, 0.5)),
+                url(images/bg.jpg);
+                
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.listen-button {
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    border: 2px solid #333;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #000;
+    background-color: #fff;
+    margin-top: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.listen-button:hover {
+    background-color: #eee;
+}
+
+/* About Section */
+.about {
+    padding: 4rem 2rem;
+    background: #c1c1c1;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about p {
+    max-width: 700px;
+    margin: 1rem auto;
+    font-style: italic;
+    color: #444;
+}
+
+.about img {
+    margin-top: 2rem;
+    max-width: 300px;
+    width: 100%;
+}
+
+/* Tracklist */
+.tracklist {
+    padding: 4rem 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    text-align: center;
+}
+
+.tracklist h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.tracklist img {
+    width: 100%;
+    max-width: 700px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Video Section */
+.video {
+    padding: 4rem 2rem;
+    background-color: #eaeaea;
+    text-align: center;
+}
+
+.video iframe {
+    width: 100%;
+    max-width: 640px;
+    height: 360px;
+    border: none;
+    margin-bottom: 1rem;
+}
+
+.video p {
+    font-style: italic;
+    color: #333;
+}
+
+/* Subscribe */
+.subscribe {
+    padding: 4rem 2rem;
+    background: #dfe7df;
+    text-align: center;
+}
+
+.subscribe p {
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.subscribe input[type="email"] {
+    padding: 0.5rem 1rem;
+    width: 250px;
+    max-width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.subscribe button {
+    padding: 0.5rem 1.2rem;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.subscribe button:hover {
+    background-color: #222;
+}
+
+/* Footer */
+footer {
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .track-page {
+    padding: 1rem;
+  }
+
+  .about-container {
+    flex-direction: column;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .listen-btn {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .book {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .track-page {
+    width: 90%;
+  }
+}
+@media (min-width: 768px) {
+  .postcard {
+    max-width: 600px;
+  }
+}
+
+@media (min-width: 768px) {
+  .tracklist {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 1.1rem;
+  }
+}
+
+
